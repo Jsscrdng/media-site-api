@@ -1,3 +1,9 @@
+FactoryBot.define do
+  factory :purchase_option do
+    
+  end
+end
+
 # == Schema Information
 #
 # Table name: purchase_options
@@ -10,8 +16,3 @@
 #  updated_at       :datetime         not null
 #  purchasable_id   :integer
 #
-FactoryBot.define do
-  factory :purchase_option do
-    
-  end
-end

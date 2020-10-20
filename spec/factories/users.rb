@@ -1,3 +1,9 @@
+FactoryBot.define do
+  factory :user do
+    
+  end
+end
+
 # == Schema Information
 #
 # Table name: users
@@ -7,8 +13,3 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-FactoryBot.define do
-  factory :user do
-    
-  end
-end

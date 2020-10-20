@@ -1,3 +1,9 @@
+FactoryBot.define do
+  factory :purchase do
+    
+  end
+end
+
 # == Schema Information
 #
 # Table name: purchases
@@ -18,8 +24,3 @@
 #  fk_rails_...  (purchase_option_id => purchase_options.id)
 #  fk_rails_...  (user_id => users.id)
 #
-FactoryBot.define do
-  factory :purchase do
-    
-  end
-end

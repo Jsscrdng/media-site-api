@@ -1,3 +1,9 @@
+FactoryBot.define do
+  factory :episode do
+    
+  end
+end
+
 # == Schema Information
 #
 # Table name: episodes
@@ -18,8 +24,3 @@
 #
 #  fk_rails_...  (season_id => seasons.id)
 #
-FactoryBot.define do
-  factory :episode do
-    
-  end
-end
