@@ -1,9 +1,12 @@
 class PurchaseOption < ApplicationRecord
+  QUALITIES = { 'sd' => 0, 'hd' => 1, '1080p' => 2, '1440p' => 3, '4k': 4}.freeze
   has_many :purchases
   has_many :users, through: :purchases
   belongs_to :purchasable, polymorphic: true
 
   validates :price, presence: true
+
+  enum quality: QUALITIES
 end
 
 # == Schema Information
