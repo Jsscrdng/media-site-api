@@ -13,7 +13,7 @@ if Rails.env.development?
       'models'                      => 'true',
       'position_in_routes'          => 'after',
       'position_in_class'           => 'after',
-      'position_in_test'            => 'after',
+      'position_in_test'            => nil,
       'position_in_fixture'         => 'after',
       'position_in_factory'         => 'after',
       'position_in_serializer'      => 'after',
