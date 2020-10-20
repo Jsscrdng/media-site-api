@@ -1,8 +1,7 @@
-class Episode < ApplicationRecord
-  belongs_to :season
-
-  # Validations
-  validates :title, :presence => true
+FactoryBot.define do
+  factory :episode do
+    
+  end
 end
 
 # == Schema Information

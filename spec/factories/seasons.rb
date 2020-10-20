@@ -1,15 +1,15 @@
-class Movie < ApplicationRecord
-  has_many :purchase_options, as: :purchasable
-
-  # Validations
-  validates :title, :presence => true
+FactoryBot.define do
+  factory :season do
+    
+  end
 end
 
 # == Schema Information
 #
-# Table name: movies
+# Table name: seasons
 #
 #  id         :bigint           not null, primary key
+#  number     :integer
 #  plot       :text
 #  title      :string
 #  created_at :datetime         not null

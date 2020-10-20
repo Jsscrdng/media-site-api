@@ -1,8 +1,7 @@
-class Movie < ApplicationRecord
-  has_many :purchase_options, as: :purchasable
-
-  # Validations
-  validates :title, :presence => true
+FactoryBot.define do
+  factory :movie do
+    
+  end
 end
 
 # == Schema Information

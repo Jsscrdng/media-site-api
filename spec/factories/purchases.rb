@@ -1,11 +1,6 @@
-class Purchase < ApplicationRecord
-  AVAILABILITY = 2.days.freeze
-
-  belongs_to :user
-  belongs_to :purchase_option
-
-  def expired?
-    created_at < (Time.now - 2.days)
+FactoryBot.define do
+  factory :purchase do
+    
   end
 end
 

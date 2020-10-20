@@ -32,7 +32,7 @@ group :development, :test do
 
   gem 'dotenv-rails', '2.7.6'
   gem 'rspec-rails', '4.0.1'
-  gem 'factory_bot', '6.1.0'
+  gem 'factory_bot_rails', '6.1.0'
   gem 'shoulda-matchers', '4.4.1'
   gem 'faker', '2.14.0'
 end
