@@ -1,6 +1,7 @@
 FactoryBot.define do
   factory :movie do
-    
+    plot { Faker::Movie.quote }
+    title { Faker::Movie.title }
   end
 end
 

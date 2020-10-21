@@ -4,6 +4,9 @@ class Season < ApplicationRecord
 
   # Validations
   validates :title, :presence => true
+
+  # scope
+  scope :list_all, -> { all.order(created_at: :desc) }
 end
 
 # == Schema Information
