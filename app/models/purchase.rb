@@ -1,6 +1,9 @@
 class Purchase < ApplicationRecord
   AVAILABILITY = 2.days.freeze
 
+  scope :availables, -> { where(created_at: 2.days.ago..Time.now) }
+  scope :by_creation, -> { order(created_at: :asc) }
+
   belongs_to :user
   belongs_to :purchase_option
 
