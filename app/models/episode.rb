@@ -3,6 +3,13 @@ class Episode < ApplicationRecord
 
   # Validations
   validates :title, :presence => true
+
+  # Callbacks
+  before_create :assign_number
+
+  def assign_number
+    self.number = season.episodes.size + 1
+  end
 end
 
 # == Schema Information

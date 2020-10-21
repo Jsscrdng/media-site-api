@@ -1,6 +1,8 @@
 FactoryBot.define do
   factory :episode do
-    
+    number { nil}
+    plot { Faker::Movie.quote }
+    title { Faker::Movie.title }
   end
 end
 
