@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1, defaults: { format: :json } do
-      resources :movies
-      resources :seasons
+      resources :movies, only: [:index]
+      resources :seasons, only: [:index]
       resources :users, only: [] do
         member do
           post 'purchase', to: 'purchases#create'
