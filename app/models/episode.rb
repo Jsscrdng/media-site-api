@@ -7,6 +7,9 @@ class Episode < ApplicationRecord
   # Callbacks
   before_create :assign_number
 
+  # Scopes
+  scope :asc, -> { order(number: :asc) }
+
   def assign_number
     self.number = season.episodes.size + 1
   end

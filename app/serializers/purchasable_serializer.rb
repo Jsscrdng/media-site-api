@@ -1,6 +1,4 @@
 class PurchasableSerializer < ActiveModel::Serializer
-  params :show_episodes
-
   attributes :id,
              :plot,
              :title,
