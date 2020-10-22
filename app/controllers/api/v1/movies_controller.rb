@@ -1,7 +1,5 @@
 class Api::V1::MoviesController < ApplicationController
   def index
-    movies = Movie.list_all
-
-    render json: movies, status: :ok, each_serializer: PurchasableSerializer
+    render json: Movie.cached_movies_list, status: :ok
   end
 end

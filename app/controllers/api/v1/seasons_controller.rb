@@ -1,7 +1,5 @@
 class Api::V1::SeasonsController < ApplicationController
   def index
-    seasons = Season.list_all
-
-    render json: seasons, status: :ok, each_serializer: PurchasableSerializer
+    render json: Season.cached_seasons_list, status: :ok
   end
 end
