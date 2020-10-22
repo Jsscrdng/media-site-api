@@ -2,7 +2,7 @@ class Episode < ApplicationRecord
   belongs_to :season
 
   # Validations
-  validates :title, :presence => true
+  validates :title, presence: true
 
   # Callbacks
   before_create :assign_number

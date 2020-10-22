@@ -3,7 +3,7 @@ class Season < ApplicationRecord
     def cached_seasons_list
       Rails.cache.fetch(:cached_seasons) do
         collection = Season.includes(:episodes).list_all
-        serialized_output = ActiveModelSerializers::SerializableResource.new(collection, each_serializer: PurchasableSerializer).to_json
+        serialized_output = ActiveModelSerializers::SerializableResource.new(collection, each_serializer: SeasonSerializer).to_json
         json_array = JSON.parse(serialized_output)
         json_array
       end
@@ -13,7 +13,7 @@ class Season < ApplicationRecord
   has_many :episodes
 
   # Validations
-  validates :title, :presence => true
+  validates :title, presence: true
 
   # Callbacks
   after_commit :update_cache, on: :create
@@ -26,7 +26,7 @@ class Season < ApplicationRecord
   def update_cache
     Rails.cache.fetch(:cached_seasons) do
       collection = Season.includes(:episodes).list_all
-      serialized_output = ActiveModelSerializers::SerializableResource.new(collection, each_serializer: PurchasableSerializer).to_json
+      serialized_output = ActiveModelSerializers::SerializableResource.new(collection, each_serializer: SeasonSerializer).to_json
       json_array = JSON.parse(serialized_output)
       json_array
     end

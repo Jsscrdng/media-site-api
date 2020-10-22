@@ -1,12 +1,12 @@
 # Media Site API
 
 Media Site API is a Rails-based system to manage your content site.
-In this readme you going to find all basics to set up this project.
+In this readme you are going to find all the basics to set up this project.
 
 ## Getting Started
 
 After clone this repo, first thing you going to need is to have a PostgreSQL alreading installed and running.
-If you havent't yet you can install it using this tutorial: https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your-ruby-on-rails-application-on-macos
+If you havent't install it, check out this tutorial: https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your-ruby-on-rails-application-on-macos
 
 This project uses `dotenv-rails`in development and test environments so make sure to create `.env` file into the app root. Env variables required are:
 ```

@@ -1,6 +1,7 @@
 FactoryBot.define do
   factory :purchase_option do
-    
+    purchasable { FactoryBot.create(:movie) }
+    quality { 'sd' }
   end
 end
 

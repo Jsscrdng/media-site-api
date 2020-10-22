@@ -8,7 +8,7 @@ class Purchase < ApplicationRecord
   belongs_to :purchase_option
 
   def expired?
-    created_at < (Time.now - 2.days)
+    created_at <= 2.days.ago
   end
 end
 

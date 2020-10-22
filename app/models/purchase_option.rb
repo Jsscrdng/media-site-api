@@ -1,5 +1,5 @@
 class PurchaseOption < ApplicationRecord
-  QUALITIES = { 'sd' => 0, 'hd' => 1, '1080p' => 2, '1440p' => 3, '4k' => 4}.freeze
+  QUALITIES = { 'sd' => 0, 'hd' => 1, '1080p' => 2, '1440p' => 3, '4k' => 4 }.freeze
   PRICE = 2.99
 
   has_many :purchases

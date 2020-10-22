@@ -2,7 +2,7 @@ class Api::V1::PurchasesController < ApplicationController
   def create
     user = User.find(params[:id])
     purchase_option = find_purchase_option
-    new_purchase = Purchase.create(purchase_option: purchase_option, user: user)
+    new_purchase = Purchase.new(purchase_option: purchase_option, user: user)
 
     if new_purchase.save
       render json: new_purchase, status: :created

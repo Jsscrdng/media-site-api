@@ -1,6 +1,7 @@
 FactoryBot.define do
   factory :purchase do
-    
+    user { FactoryBot.create(:user) }
+    purchase_option { FactoryBot.create(:purchase_option) }
   end
 end
 

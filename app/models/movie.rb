@@ -3,7 +3,7 @@ class Movie < ApplicationRecord
     def cached_movies_list
       Rails.cache.fetch(:cached_movies) do
         collection = Movie.list_all
-        serialized_output = ActiveModelSerializers::SerializableResource.new(collection, each_serializer: PurchasableSerializer).to_json
+        serialized_output = ActiveModelSerializers::SerializableResource.new(collection, each_serializer: MovieSerializer).to_json
         json_array = JSON.parse(serialized_output)
         json_array
       end
@@ -12,7 +12,7 @@ class Movie < ApplicationRecord
   has_many :purchase_options, as: :purchasable
 
   # Validations
-  validates :title, :presence => true
+  validates :title, presence: true
 
   # Callbacks
   after_commit :update_cache, on: :create
@@ -24,7 +24,7 @@ class Movie < ApplicationRecord
   def update_cache
     Rails.cache.fetch(:cached_movies) do
       collection = Movie.list_all
-      serialized_output = ActiveModelSerializers::SerializableResource.new(collection, each_serializer: PurchasableSerializer).to_json
+      serialized_output = ActiveModelSerializers::SerializableResource.new(collection, each_serializer: MovieSerializer).to_json
       json_array = JSON.parse(serialized_output)
       json_array
     end
