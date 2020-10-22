@@ -1,8 +1,8 @@
 class Api::V1::UsersController < ApplicationController
   def library
-    user = User.find(params[:id])
-    purchases = user.purchases.availables.by_creation
+    purchasables = Purchase.availables.by_creation
+                           .where(user_id: params[:id]).map { |x| x.purchase_option.purchasable }
 
-    render json: purchases, status: :ok
+    render json: purchasables, status: :ok, each_serializer: PurchasableSerializer
   end
 end
